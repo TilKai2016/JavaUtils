@@ -7,7 +7,7 @@ import java.util.Calendar;
  */
 public class DateUtils {
     /**
-     * 获取今天起始时间
+     * 获取日起始时间
      * @param calendar
      * @return
      */
@@ -20,6 +20,11 @@ public class DateUtils {
         return time;
     }
 
+    /**
+     * 获取次日开始时间
+     * @param calendar
+     * @return
+     */
     public static Calendar getStartOfNextDay(Calendar calendar) {
         Calendar time = getStartOfDay(calendar);
         time.add(Calendar.DAY_OF_MONTH, 1);
@@ -27,7 +32,7 @@ public class DateUtils {
     }
 
     /**
-     * 获取今天的结束时间
+     * 获取日结束时间
      * @param calendar
      * @return
      */
@@ -41,7 +46,7 @@ public class DateUtils {
     }
 
     /**
-     * 获取本小时开始时间
+     * 获取小时开始时间
      * @param calendar
      * @return
      */
@@ -64,6 +69,11 @@ public class DateUtils {
         return time;
     }
 
+    /**
+     * 获取月开始时间
+     * @param calendar
+     * @return
+     */
     public static Calendar getStartOfMonth(Calendar calendar) {
         Calendar time = (Calendar) calendar.clone();
         time.set(Calendar.DAY_OF_MONTH, 1);
@@ -74,12 +84,22 @@ public class DateUtils {
         return time;
     }
 
+    /**
+     * 获取次月开始时间
+     * @param calendar
+     * @return
+     */
     public static Calendar getStartOfNextMonth(Calendar calendar) {
         Calendar time = getStartOfMonth(calendar);
         time.add(Calendar.MONTH, 1);
         return time;
     }
 
+    /**
+     * 获取年开始时间
+     * @param calendar
+     * @return
+     */
     public static Calendar getStartOfYear(Calendar calendar) {
         Calendar time = (Calendar) calendar.clone();
         time.set(Calendar.MONTH, 0);
@@ -91,6 +111,11 @@ public class DateUtils {
         return time;
     }
 
+    /**
+     * 获取次年开始时间
+     * @param calendar
+     * @return
+     */
     public static Calendar getStartOfNextYear(Calendar calendar) {
         Calendar time = getStartOfYear(calendar);
         time.add(Calendar.YEAR, 1);
@@ -159,4 +184,14 @@ public class DateUtils {
 
         return resultDateTime;
     }
+
+//    public static Calendar getStartOfQuarter(Integer integerOfDate) {
+//
+//        String tempDate = String.valueOf(integerOfDate);
+//
+//        if (tempDate.length() >= 6) {
+//
+//        }
+//
+//    }
 }
