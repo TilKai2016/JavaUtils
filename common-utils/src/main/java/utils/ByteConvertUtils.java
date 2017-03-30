@@ -1,5 +1,7 @@
 package utils;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 
 /**
@@ -242,6 +244,13 @@ public class ByteConvertUtils {
 
     public static void main(String[] args)
     {
+
+        byte[] bytes = new byte[] {77, 115, 0, 0};
+
+        float ff = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getFloat();
+
+        System.out.println(ff);
+
         short s = 122;
         int i = 123;
         long l = 1234567;
